@@ -36,7 +36,9 @@ hr{
     padding: 5px;
 }
 
+
 #input {
+    margin: 5px;
     padding: 5px;
     max-width: 250px;
     min-width: 100px;
@@ -47,6 +49,7 @@ hr{
 }
 
 #btn {
+    margin: 5px;
     margin-left: 5px;
     cursor: pointer;
     height: 28px;
