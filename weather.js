@@ -46,11 +46,14 @@ main();
 
 // add data to DOM
 const setdata = (data) => {
+    // city
     city.innerText = `${data.name}, ${data.sys.country}`
+    // temperature details
     tempDetail.innerHTML = `${data.weather[0].description}`;
     temp.innerText = `Temp: ${data.main.temp}°c`;
     maxtemp.innerText = `Max-Temp: ${data.main.temp_max}°c`;
     mintemp.innerText = `Min-Temp: ${data.main.temp_min}°c`;
     feelsLike.innerText = `Feels like: ${data.main.feels_like}°c`;
+    // humidity
     humidity.innerText = `Humidity: ${data.main.humidity}%`
 }
