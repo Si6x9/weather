@@ -7,8 +7,10 @@ const city = document.getElementById('city')
 // tempurature details
 const tempDetail = document.getElementById('tempdetail')
 const temp = document.getElementById('temp')
-const feelsLike = document.getElementById('feelslike')
+const maxtemp = document.getElementById('maxtemp')
 const mintemp = document.getElementById('mintemp')
+const feelsLike = document.getElementById('feelslike')
+const humidity = document.getElementById('humidity')
 
 // default city
 let searchCity = 'kolkata';
@@ -25,9 +27,11 @@ document.addEventListener('keydown', (key) => {
 })
 
 // main function
+const accessKey = 'a8e71c9932b20c4ceb0aed183e6a83bb'
+const url = `https://api.openweathermap.org/data/2.5/weather?q=`
+
 const main = () => {
-    let data;
-    fetch(`http://api.weatherstack.com/current?access_key=9e1c75b9ab20a418381c6570d2518c71&query=${searchCity}`)
+    fetch(`${url}${searchCity}&appid=${accessKey}&units=metric`)
         .then(response => response.json())
         .then(response => {
             error.style.display = 'none'
@@ -35,17 +39,18 @@ const main = () => {
         })
         .catch(err => {
             error.style.display = 'block'
+            console.log(err);
         });
-
 };
 main();
 
 // add data to DOM
 const setdata = (data) => {
-    city.innerText = data.request.query;
-    tempDetail.innerHTML = `<img id="tempimg" src="${data.current.weather_icons[0]}" alt="">${data.current.weather_descriptions[0]}`;
-    temp.innerText = `Temp: ${data.current.temperature}°c`;
-    feelsLike.innerText = `Feels like: ${data.current.feelslike}°c`;
-    mintemp.innerText = `Humidity: ${data.current.humidity}%`
+    city.innerText = `${data.name}, ${data.sys.country}`
+    tempDetail.innerHTML = `${data.weather[0].description}`;
+    temp.innerText = `Temp: ${data.main.temp}°c`;
+    maxtemp.innerText = `Max-Temp: ${data.main.temp_max}°c`;
+    mintemp.innerText = `Min-Temp: ${data.main.temp_min}°c`;
+    feelsLike.innerText = `Feels like: ${data.main.feels_like}°c`;
+    humidity.innerText = `Humidity: ${data.main.humidity}%`
 }
-
