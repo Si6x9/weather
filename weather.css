@@ -1,0 +1,111 @@
+/* All */
+* {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    box-sizing: border-box;
+}
+
+/* Main container */
+.container {
+    max-width: 600px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: auto;
+}
+
+/* Header */
+header {
+    font-size: 2.7rem;
+    color: rgb(66, 64, 204);
+    margin: auto;
+    margin: 10px;
+    margin-bottom: 30px;
+}
+
+hr{
+    margin: 15px;
+}
+/*  input */
+.input {
+    margin: 10px 0px;
+    margin-bottom: 50px;
+    padding: 5px;
+}
+
+#input {
+    padding: 5px;
+    max-width: 250px;
+    min-width: 100px;
+    font-size: 1.1rem;
+    height: 28px;
+    background-color: rgb(213, 243, 245);
+    border-radius: 5px;
+}
+
+#btn {
+    margin-left: 5px;
+    cursor: pointer;
+    height: 28px;
+    border-radius: 6px;
+    font-size: large;
+}
+#btn:active{
+    color: rgb(10, 9, 9);
+    background-color: white;
+}
+#error{
+    color: red;
+    display: none;
+}
+/* Box */
+.box {
+    width: 100%;
+}
+.city {
+    
+    background-color: rgb(252, 226, 162);
+    /* border: 2px dashed; */
+    border-radius: 30px 0px 0px;
+    border-bottom: 1px solid rgb(255, 66, 66);
+}
+
+#city {
+    font-size: 2.5rem;
+    padding: 15px;
+    margin: 0%;
+}
+
+/* Temperature section */
+.tempbox {
+    padding: 13px;
+    padding-bottom: 25px;
+    background-color: lavender;
+    border-radius: 0px 0px 30px;
+}
+#tempimg{
+    margin-right: 5px;
+    width: 55px;
+    height: 55px;
+    border-radius: 30px;
+
+}
+.temp {
+    font-size: 1.2rem;
+    margin: 0%;
+    padding: 5px 5px;
+    font-weight: 50;
+}
+
+#tempdetail {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 5px;
+    font-size: 2.2rem;
+    font-weight: 500;
+}
